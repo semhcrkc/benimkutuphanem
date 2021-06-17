@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="benimkutuphanemDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="adminBilgi">
+          <Key>
+            <PropertyRef Name="adminId" />
+          </Key>
+          <Property Name="adminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="adminAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="adminSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="adminSifre" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="kategoriBilgi">
+          <Key>
+            <PropertyRef Name="kategoriId" />
+          </Key>
+          <Property Name="kategoriId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kategoriAd" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="kitapBilgi">
+          <Key>
+            <PropertyRef Name="kitapId" />
+          </Key>
+          <Property Name="kitapId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kitapAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="kitapYazar" Type="nvarchar" MaxLength="50" />
+          <Property Name="kitapYıl" Type="date" />
+          <Property Name="kitapSayfaSayisi" Type="int" />
+          <Property Name="kitapYayinEvi" Type="nvarchar" MaxLength="50" />
+          <Property Name="kitapDil" Type="nvarchar" MaxLength="50" />
+          <Property Name="kitapAcıklama" Type="nvarchar" MaxLength="700" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="üyeBilgi">
+          <Key>
+            <PropertyRef Name="uyeId" />
+          </Key>
+          <Property Name="uyeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="uyeAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="uyeSoyad" Type="nvarchar" MaxLength="50" />
+          <Property Name="uyeTelefon" Type="int" />
+          <Property Name="uyePosta" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="üyeKitapBilgi">
+          <Key>
+            <PropertyRef Name="okunanKitaplarId" />
+          </Key>
+          <Property Name="okunanKitaplarId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kitapAd" Type="nvarchar" MaxLength="50" />
+          <Property Name="okunmaTarihi" Type="date" />
+          <Property Name="uyeId" Type="int" />
+          <Property Name="kitapId" Type="int" />
+        </EntityType>
+        <Association Name="FK_okunan kitaplar Tablo_kitap Tablo">
+          <End Role="kitapBilgi" Type="Self.kitapBilgi" Multiplicity="0..1" />
+          <End Role="üyeKitapBilgi" Type="Self.üyeKitapBilgi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kitapBilgi">
+              <PropertyRef Name="kitapId" />
+            </Principal>
+            <Dependent Role="üyeKitapBilgi">
+              <PropertyRef Name="kitapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_okunan kitaplar Tablo_üye tablo">
+          <End Role="üyeBilgi" Type="Self.üyeBilgi" Multiplicity="0..1" />
+          <End Role="üyeKitapBilgi" Type="Self.üyeKitapBilgi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="üyeBilgi">
+              <PropertyRef Name="uyeId" />
+            </Principal>
+            <Dependent Role="üyeKitapBilgi">
+              <PropertyRef Name="uyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="benimkutuphanemDBModelStoreContainer">
+          <EntitySet Name="adminBilgi" EntityType="Self.adminBilgi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kategoriBilgi" EntityType="Self.kategoriBilgi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="kitapBilgi" EntityType="Self.kitapBilgi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="üyeBilgi" EntityType="Self.üyeBilgi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="üyeKitapBilgi" EntityType="Self.üyeKitapBilgi" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_okunan kitaplar Tablo_kitap Tablo" Association="Self.FK_okunan kitaplar Tablo_kitap Tablo">
+            <End Role="kitapBilgi" EntitySet="kitapBilgi" />
+            <End Role="üyeKitapBilgi" EntitySet="üyeKitapBilgi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_okunan kitaplar Tablo_üye tablo" Association="Self.FK_okunan kitaplar Tablo_üye tablo">
+            <End Role="üyeBilgi" EntitySet="üyeBilgi" />
+            <End Role="üyeKitapBilgi" EntitySet="üyeKitapBilgi" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="benimkutuphanemDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="adminBilgi">
+          <Key>
+            <PropertyRef Name="adminId" />
+          </Key>
+          <Property Name="adminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="adminAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adminSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="adminSifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="kategoriBilgi">
+          <Key>
+            <PropertyRef Name="kategoriId" />
+          </Key>
+          <Property Name="kategoriId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kategoriAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="kitapBilgi">
+          <Key>
+            <PropertyRef Name="kitapId" />
+          </Key>
+          <Property Name="kitapId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kitapAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kitapYazar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kitapYıl" Type="DateTime" Precision="0" />
+          <Property Name="kitapSayfaSayisi" Type="Int32" />
+          <Property Name="kitapYayinEvi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kitapDil" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="kitapAcıklama" Type="String" MaxLength="700" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="üyeKitapBilgi" Relationship="Self.FK_okunan_kitaplar_Tablo_kitap_Tablo" FromRole="kitapBilgi" ToRole="üyeKitapBilgi" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="üyeBilgi">
+          <Key>
+            <PropertyRef Name="uyeId" />
+          </Key>
+          <Property Name="uyeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="uyeAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="uyeSoyad" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="uyeTelefon" Type="Int32" />
+          <Property Name="uyePosta" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="üyeKitapBilgi" Relationship="Self.FK_okunan_kitaplar_Tablo_üye_tablo" FromRole="üyeBilgi" ToRole="üyeKitapBilgi" />
+        </EntityType>
+        <EntityType Name="üyeKitapBilgi">
+          <Key>
+            <PropertyRef Name="okunanKitaplarId" />
+          </Key>
+          <Property Name="okunanKitaplarId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kitapAd" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="okunmaTarihi" Type="DateTime" Precision="0" />
+          <Property Name="uyeId" Type="Int32" />
+          <Property Name="kitapId" Type="Int32" />
+          <NavigationProperty Name="kitapBilgi" Relationship="Self.FK_okunan_kitaplar_Tablo_kitap_Tablo" FromRole="üyeKitapBilgi" ToRole="kitapBilgi" />
+          <NavigationProperty Name="üyeBilgi" Relationship="Self.FK_okunan_kitaplar_Tablo_üye_tablo" FromRole="üyeKitapBilgi" ToRole="üyeBilgi" />
+        </EntityType>
+        <Association Name="FK_okunan_kitaplar_Tablo_kitap_Tablo">
+          <End Role="kitapBilgi" Type="Self.kitapBilgi" Multiplicity="0..1" />
+          <End Role="üyeKitapBilgi" Type="Self.üyeKitapBilgi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="kitapBilgi">
+              <PropertyRef Name="kitapId" />
+            </Principal>
+            <Dependent Role="üyeKitapBilgi">
+              <PropertyRef Name="kitapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_okunan_kitaplar_Tablo_üye_tablo">
+          <End Role="üyeBilgi" Type="Self.üyeBilgi" Multiplicity="0..1" />
+          <End Role="üyeKitapBilgi" Type="Self.üyeKitapBilgi" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="üyeBilgi">
+              <PropertyRef Name="uyeId" />
+            </Principal>
+            <Dependent Role="üyeKitapBilgi">
+              <PropertyRef Name="uyeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="benimkutuphanemDBEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="adminBilgi" EntityType="Self.adminBilgi" />
+          <EntitySet Name="kategoriBilgi" EntityType="Self.kategoriBilgi" />
+          <EntitySet Name="kitapBilgi" EntityType="Self.kitapBilgi" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="üyeBilgi" EntityType="Self.üyeBilgi" />
+          <EntitySet Name="üyeKitapBilgi" EntityType="Self.üyeKitapBilgi" />
+          <AssociationSet Name="FK_okunan_kitaplar_Tablo_kitap_Tablo" Association="Self.FK_okunan_kitaplar_Tablo_kitap_Tablo">
+            <End Role="kitapBilgi" EntitySet="kitapBilgi" />
+            <End Role="üyeKitapBilgi" EntitySet="üyeKitapBilgi" />
+          </AssociationSet>
+          <AssociationSet Name="FK_okunan_kitaplar_Tablo_üye_tablo" Association="Self.FK_okunan_kitaplar_Tablo_üye_tablo">
+            <End Role="üyeBilgi" EntitySet="üyeBilgi" />
+            <End Role="üyeKitapBilgi" EntitySet="üyeKitapBilgi" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="benimkutuphanemDBModelStoreContainer" CdmEntityContainer="benimkutuphanemDBEntities1">
+          <EntitySetMapping Name="adminBilgi">
+            <EntityTypeMapping TypeName="benimkutuphanemDBModel.adminBilgi">
+              <MappingFragment StoreEntitySet="adminBilgi">
+                <ScalarProperty Name="adminId" ColumnName="adminId" />
+                <ScalarProperty Name="adminAd" ColumnName="adminAd" />
+                <ScalarProperty Name="adminSoyad" ColumnName="adminSoyad" />
+                <ScalarProperty Name="adminSifre" ColumnName="adminSifre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kategoriBilgi">
+            <EntityTypeMapping TypeName="benimkutuphanemDBModel.kategoriBilgi">
+              <MappingFragment StoreEntitySet="kategoriBilgi">
+                <ScalarProperty Name="kategoriId" ColumnName="kategoriId" />
+                <ScalarProperty Name="kategoriAd" ColumnName="kategoriAd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="kitapBilgi">
+            <EntityTypeMapping TypeName="benimkutuphanemDBModel.kitapBilgi">
+              <MappingFragment StoreEntitySet="kitapBilgi">
+                <ScalarProperty Name="kitapId" ColumnName="kitapId" />
+                <ScalarProperty Name="kitapAd" ColumnName="kitapAd" />
+                <ScalarProperty Name="kitapYazar" ColumnName="kitapYazar" />
+                <ScalarProperty Name="kitapYıl" ColumnName="kitapYıl" />
+                <ScalarProperty Name="kitapSayfaSayisi" ColumnName="kitapSayfaSayisi" />
+                <ScalarProperty Name="kitapYayinEvi" ColumnName="kitapYayinEvi" />
+                <ScalarProperty Name="kitapDil" ColumnName="kitapDil" />
+                <ScalarProperty Name="kitapAcıklama" ColumnName="kitapAcıklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="benimkutuphanemDBModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="üyeBilgi">
+            <EntityTypeMapping TypeName="benimkutuphanemDBModel.üyeBilgi">
+              <MappingFragment StoreEntitySet="üyeBilgi">
+                <ScalarProperty Name="uyeId" ColumnName="uyeId" />
+                <ScalarProperty Name="uyeAd" ColumnName="uyeAd" />
+                <ScalarProperty Name="uyeSoyad" ColumnName="uyeSoyad" />
+                <ScalarProperty Name="uyeTelefon" ColumnName="uyeTelefon" />
+                <ScalarProperty Name="uyePosta" ColumnName="uyePosta" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="üyeKitapBilgi">
+            <EntityTypeMapping TypeName="benimkutuphanemDBModel.üyeKitapBilgi">
+              <MappingFragment StoreEntitySet="üyeKitapBilgi">
+                <ScalarProperty Name="okunanKitaplarId" ColumnName="okunanKitaplarId" />
+                <ScalarProperty Name="kitapAd" ColumnName="kitapAd" />
+                <ScalarProperty Name="okunmaTarihi" ColumnName="okunmaTarihi" />
+                <ScalarProperty Name="uyeId" ColumnName="uyeId" />
+                <ScalarProperty Name="kitapId" ColumnName="kitapId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

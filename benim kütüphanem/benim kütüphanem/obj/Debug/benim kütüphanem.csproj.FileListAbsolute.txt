@@ -1,0 +1,48 @@
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\obj\Debug\benim kütüphanem.csprojResolveAssemblyReference.cache
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\ApplicationInsights.config
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\roslyn\csc.exe
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\roslyn\vbc.exe
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\roslyn\VBCSCompiler.exe
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\benim kütüphanem.dll.config
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\benim kütüphanem.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\benim kütüphanem.pdb
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\EntityFramework.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\EntityFramework.SqlServer.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.AI.Web.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.ApplicationInsights.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Newtonsoft.Json.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\System.Net.Http.Formatting.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\System.Web.Http.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\System.Web.Http.WebHost.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\EntityFramework.xml
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\EntityFramework.SqlServer.xml
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.AI.Web.xml
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.ApplicationInsights.xml
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Newtonsoft.Json.xml
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\System.Net.Http.Formatting.xml
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\System.Web.Http.xml
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\System.Web.Http.WebHost.xml
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\obj\Debug\benim kütüphanem.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\obj\Debug\benim kütüphanem.pdb
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\Swashbuckle.Core.dll
+C:\Users\semih\documents\visual studio 2015\Projects\benim kütüphanem\benim kütüphanem\bin\WebActivatorEx.dll
